@@ -1,0 +1,25 @@
+Charte de Projet : TheLablog
+
+Conception d’un blog dans le cadre du projet de fin d’année de Bachelor2.
+Séparé par deux grands axes, Développement et Infrastructure
+
+Liste des fonctionnalités du blog 
+-Authentification, Connexion, Session
+-Posts (sans image pour le moment)
+-Acces aux posts des autres utilisateurs, commentaires, likes
+-Catégories
+
+Stack choisie :
+Laravel 8, VueJs, PhpMyAdmin, XAMPP(temporaire)
+
+Fonctionalité minimales requises :
+Post, Session
+
+Timeline : 
+Soutenance le 14 Juin :
+-19 Mai, Maîtrise suffisante de Laravel pour avancer
+-21 Mai, Connexion à la base de donnée
+-1er Juin : Fonctionnalités Minimales présentes sur le projet,
+-7 Juin : TheLablog fini (intégralité ou majeure partie des fonctions intégrées)
+-7 juin + : Infrastructure en place,
+ 
