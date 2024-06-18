@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddLastLoginAtToUsersTable extends Migration
+class CreateBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,14 @@ class AddLastLoginAtToUsersTable extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::table('users', function (Blueprint $table) {
-        $table->timestamp('last_login_at')->nullable();
-    });
-}
+    {
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -25,8 +28,6 @@ class AddLastLoginAtToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('last_login_at');
-        });
+        Schema::dropIfExists('blogs');
     }
 }

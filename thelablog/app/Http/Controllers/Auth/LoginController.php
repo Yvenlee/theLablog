@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
+    protected $redirectTo = '/';
     public function showLoginForm()
     {
         return view('auth.login');
@@ -32,6 +34,17 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect('/');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->intended($this->redirectTo());
+    }
+
+
+    protected function redirectTo()
+    {
+        return $this->redirectTo;
     }
 }
 
